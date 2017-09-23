@@ -15,17 +15,12 @@
         <div>
             <h1><a href="">Django Girls Blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 23.09.2017, 15:05</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Ciao a Tutti. Questo è il mio primo post! Che figo!.</p>
-        </div>
-
-        <div>
-            <p>published: 23.09.2017, 15:07</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Prova e riprova. Questo è il mio secondo post. Non credevo ci sarei riuscita :).</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
